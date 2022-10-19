@@ -1,0 +1,16 @@
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Our World",
+    "headline":"Our World",
+    "description": "Some data about our world",
+    "author": {
+        "@type": "Person",
+        "name": "Idjer Samy Remy"
+    },
+    "publisher": {
+        "@type": "University",
+        "name": "UNIMI"
+    },
+    "url":"https://www.ourworld.it",
+}

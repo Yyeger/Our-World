@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.98.0">
+    <title>Carousel Template · Bootstrap v5.2</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
+
+    <script src="public/functions.js"></script>
+
+
+    <!-- grafico a torta-->
+    <script type="text/javascript" src="public/a_data/jquery-git.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="public/a_data/result-light.css">
+
+      <link rel="stylesheet" type="text/css" href="public/a_data/jquery-ui.css">
+      <script type="text/javascript" src="public/a_data/jquery-1.js"></script>
+      <script type="text/javascript" src="public/a_data/jquery-ui.js"></script>
+      <link rel="stylesheet" type="text/css" href="public/a_data/style.css">
+      <script type="text/javascript" src="public/a_data/Chart.js"></script>
+      <link rel="stylesheet" id="compiled-css" type="text/css" href="/public/torta.css">
+
+
+
+
+    <!-- fine grafico a torta-->
+
+
+
+    
+
+<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="public/carousel.css" rel="stylesheet">
+  </head>
+  <body>
+    <script> 
+    function fixmode() {if (localStorage.getItem('mode') == 'dark') {darkmode();localStorage.setItem('mode', 'dark');
+     var elements = document.getElementsByClassName('carousel-caption');
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.color = "#ffffff";
+        }
+      } else {
+        var elements = document.getElementsByClassName('carousel-caption');
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.color = "#000000";
+        }
+      }}
+      
+      
+      document.addEventListener("DOMContentLoaded", function(event) {
+      fixmode(); 
+      });
+      </script>
+    <script> if (localStorage.getItem('font') == 'dyslexic') {dyslexicfont();localStorage.setItem('font', 'dyslexic');} </script>
+
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        <li class="nav-item justify-content-right">
+            <a href="http://127.0.0.1:8080/"><button class="btn btn-dark">Home</button></a>
+          </li>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
+        <ul class="navbar-nav mb-2 mb-md-0">
+          <li class="nav-item">
+            <button onclick="dyslexicfont()" type="button" class="btn btn-dark">Dyslexic Font</button>
+          </li>
+          <li class="nav-item">
+            <button id="darkmodeid" onclick="darkmode()" type="button" class="btn btn-dark">Dark Mode</button>
+          </li>
+          <li class="nav-item">
+            <button onclick="daltoniccolours()" type="button" class="btn btn-dark">Daltonic Colours</button>
+          </li>
+        </ul>
+      </div>
+      <li class="nav-item justify-content-right">
+            <a href="http://127.0.0.1:8080/ENG"><button class="btn btn-dark">ENG</button></a>
+      </li>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <div class="position-relative overflow-hidden p-3 p-md-5 text-center oppa ">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+      <h1 class="display-4 fw-normal white-title">Our World</h1>
+      <h1 class="display-4 fw-normal white-title">Visualized</h1>
+      <p class="lead fw-normal white-title">By Idjer Samy Remy</p>
+
+    </div>
+    <div class="product-device shadow-sm d-none d-md-block"></div>
+    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+  </div>
+
+  <div id="myCarousel" class="carousel slide" data-bs-interval="false">
+
+    <div class="carousel-inner">
+      
+      <div class="carousel-item active">
+        <div class="container">
+          <!-- inizio test dei grafici-->
+
+          <pre class="title"> Ma quanto inquiniamo davvero?
+          </pre>
+              
+            <h2> Sapendo che l'Italia in media produce un totale di 0.5 tonnellate di CO2 all'anno prova a immaginare quanta CO2 viene prodotta al mondo e come è divisa nei vari settori.</h2>
+            <h2> P.S. Se tutto il mondo inquinasse quanto l'Italia produrremo 66 tonnelate di CO2 all'anno</h2>
+            
+            <pre>
+            </pre>
+                <div class="titre">Energia per l'industria:</div>
+                <div id="red" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all ">
+                    <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 25%;"></span>
+                </div>
+                <div class="titre">Energia per gli edifici :</div>
+                <div id="green" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                  <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 25%;"></span>
+                </div>
+                <div class="titre">Trasporti:</div>
+                <div id="blue" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                  <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 25%;"></span></div>
+                <div class="titre">Agricoltura e allevamenti:</div>
+                <div id="yellow" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                  <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 25%;"></span></div>
+                <div class="titre">Spreco:</div>
+                <div id="sienna" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                  <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 25%;"></span></div>
+                <div class="titre">Energia dispersa durante la produzione:</div>
+                <div id="gold" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                  <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 25%;"></span></div>
+                <div class="titre">Emissioni di provenienza sconosciuta:</div>
+                <div id="violet" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                  <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 25%;"></span></div>
+
+          
+                <canvas id="myChart" style="width: 350px; height: 350px;" width="350" height="350"></canvas>
+                
+                <div class="centrato">
+                  <button onclick="valoriveri()" type="button" class="btn btn-dark">Premi qui per conoscere i veri valori!</button>
+                </div>
+
+
+                <script type="text/javascript" src="public/torta.js"></script>
+
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="container">
+          <pre class="title"> Chi ne soffre di più?
+          </pre>
+
+          <div class="card-group">
+            <div class="card bg-light text-dark">
+              <img class="card-img-top" src="public/brescia-hotels.webp" alt="Loggia di Brescia">
+              <div class="card-body">
+                <h5 class="card-title">Brescia</h5>
+                <p id="ariabrescia"></p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted" id="lastupdatebrescia"></small>
+                <script> getQuality('Brescia', 'ariabrescia', 'lastupdatebrescia') </script>
+              </div>
+            </div>
+            <div class="card bg-light text-dark">
+              <img class="card-img-top" src="public/Quartiere-malfamato-a-Milano-le-(1).jpg" alt="Duomo di Milano">
+              <div class="card-body">
+                <h5 class="card-title">Milano</h5>
+                <p id="ariamilano"></p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted" id="lastupdatemilano"></small>
+                <script> getQuality('Milano', 'ariamilano', 'lastupdatemilano') </script>
+              </div>
+            </div>
+            <div class="card bg-light text-dark">
+              <img class="card-img-top" src="public/Parigi-AdobeStock.jpg" alt="Tour Eiffel a Parigi">
+              <div class="card-body">
+                <h5 class="card-title">Parigi</h5>
+                <p id="ariaparigi"></p>
+                </div>
+              <div class="card-footer">
+                <small class="text-muted" id="lastupdateparigi"></small>
+                <script> getQuality('Paris', 'ariaparigi', 'lastupdateparigi') </script>
+              </div>
+            </div>
+          </div>
+
+
+
+          <section>
+            <div class="container" align="center">
+                <form id="form-input" class="row g-3">
+                    <div>
+                        <label class="form-label">Città</label>
+                        <input type="text" id="city" class="form-control" placeholder="Città" aria-label="Name" aria-describedby="basic-addon2" autocomplete="off">
+                    </div>
+                    <div>
+                        <button onclick="getQualityCity('cittàselezionata')" class="btn btn-outline-secondary" id="searchcity" type="button">Cerca</button>
+                    </div>
+                </form>
+            </div>
+
+            <p id="cittàselezionata"></p>
+
+
+        </div>
+      </div>
+
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  
+
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <footer class="bg-dark py-3 mt-auto">
+            <div class="container px-4">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto">
+                        <div class="small m-0 text-white">
+                            Copyright &copy; Our World
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="http://127.0.0.1:8080/privacy">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="http://127.0.0.1:8080/terms">Terms</a>
+                </div>
+            </div>
+        </footer>   
+</main>   
+  </body>
+</html>

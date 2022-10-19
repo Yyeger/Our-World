@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.98.0">
+    <title>Carousel Template · Bootstrap v5.2</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
+
+    <script src="public/functions.js"></script>
+
+<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+.dark-mode {
+  background-color: black;
+  color: #dddddd;
+}
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .dyslexic-font {
+  font-family: opendyslexicregular;
+}
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="public/carousel.css" rel="stylesheet">
+  </head>
+  <body>
+    <script> 
+    
+    
+      function fixmode() {if (localStorage.getItem('mode') == 'dark') {darkmode();localStorage.setItem('mode', 'dark');
+       var elements = document.getElementsByClassName('carousel-caption');
+          for (var i = 0; i < elements.length; i++) {
+              elements[i].style.color = "#ffffff";
+          }
+        } else {
+          var elements = document.getElementsByClassName('carousel-caption');
+          for (var i = 0; i < elements.length; i++) {
+              elements[i].style.color = "#000000";
+          }
+        }}
+        
+        
+        document.addEventListener("DOMContentLoaded", function(event) {
+        fixmode(); 
+        });
+        </script>
+      <script> if (localStorage.getItem('font') == 'dyslexic') {dyslexicfont();localStorage.setItem('font', 'dyslexic');} </script>
+  
+    <script> 
+    
+    
+    function fixmode() {if (localStorage.getItem('mode') == 'dark') {darkmode();localStorage.setItem('mode', 'dark');
+     var elements = document.getElementsByClassName('carousel-caption');
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.color = "#ffffff";
+        }
+      } else {
+        var elements = document.getElementsByClassName('carousel-caption');
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.color = "#000000";
+        }
+      }}
+      
+      
+      document.addEventListener("DOMContentLoaded", function(event) {
+      fixmode(); 
+      });
+      </script>
+    <script> if (localStorage.getItem('font') == 'dyslexic') {dyslexicfont();localStorage.setItem('font', 'dyslexic');} </script>
+
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        <li class="nav-item justify-content-right">
+            <a href="http://127.0.0.1:8080"><button class="btn btn-dark">Home</button></a>
+          </li>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
+        <ul class="navbar-nav mb-2 mb-md-0">
+          <li class="nav-item">
+            <button onclick="dyslexicfont()" type="button" class="btn btn-dark">Dyslexic Font</button>
+          </li>
+          <li class="nav-item">
+            <button id="darkmodeid" onclick="darkmode()" type="button" class="btn btn-dark">Dark Mode</button>
+          </li>
+          <li class="nav-item">
+            <button onclick="daltoniccolours()" type="button" class="btn btn-dark">Daltonic Colours</button>
+          </li>
+        </ul>
+      </div>
+  </nav>
+</header>
+
+	<div style="padding-top: 24rem; padding-bottom: 24rem">
+
+			<h1 style="text-align:center">404</h1>
+
+			<h2 style="text-align:center">we are sorry, but the page you requested was not found</h2>
+	</div>
+			<script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      <footer class="bg-dark py-3 mt-auto">
+            <div class="container px-4">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto">
+                        <div class="small m-0 text-white">
+                            Copyright &copy; Our World
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="http://127.0.0.1:8080/privacy">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="http://127.0.0.1:8080/terms">Terms</a>
+                </div>
+            </div>
+        </footer>   
+</main>   
+  </body>
+</html>
+
